@@ -1,9 +1,8 @@
 const WebSocket = require("ws");
-//wassup
 const por = process.env.PORT || 8082 
 
 const wss = new WebSocket.Server({port:por});
-console.log("testing");
+console.log("server on");
 
 wss.on('connection', ws => {
     console.log("connection established");
