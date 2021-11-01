@@ -12,7 +12,7 @@
     initialmessage = false;
     messaging = false;
 
-    const ws = new WebSocket("wss://testing-site-8082.herokuapp.com/");
+    const ws = new WebSocket("wss://testing-site-8082.herokuapp.com");
     ws.addEventListener("open",connection);
     function connection(){
         document.getElementById("header").innerHTML = 'connected =======';
