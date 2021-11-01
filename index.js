@@ -21,12 +21,7 @@ wss.on("connection", ws =>{
         recievedchat = " "+ data +" ";
         for( i in usersids){
             let socket = usersids[i];
-            if(ws == socket){
-                
-            }
-            else{
-                socket.send(recievedchat);
-            }
+            socket.send(recievedchat);
         }
     })
     
