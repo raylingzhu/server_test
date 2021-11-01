@@ -3,6 +3,7 @@ const WebSocket = require("ws");
 const por = process.env.PORT || 8082 
 
 const wss = new WebSocket.Server({port:por});
+console.log("testing");
 
 wss.on('connection', ws => {
     console.log("connection established");
