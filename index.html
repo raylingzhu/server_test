@@ -1,0 +1,48 @@
+<html>
+<body>
+
+<h2>JavaScript Web Workers API</h2>
+<p >looking for connection... <output id="result"></output></p>
+<p id="output"></p>
+<input id="message"><button type="button" onclick="send_message()">send message</button>
+
+
+
+<script>
+    initialmessage = false;
+    messaging = false;
+
+    const ws = new WebSocket("ws://localhost:8082");
+    ws.addEventListener("open",connection);
+    function connection(){
+        document.getElementById("header").innerHTML = 'connected =======';
+    }
+    ws.addEventListener("message", recieved =>{
+        if (initialmessage == false){
+            document.getElementById("result").innerHTML = "You are user " + recieved.data;
+            userid = recieved.data;
+            initialmessage = true;
+        }
+        else{
+            output = document.getElementById("output").innerHTML = recieved.data;
+        }
+            
+        
+
+
+
+        
+    });
+
+    function send_message(){
+        message = document.getElementById("message").value;
+        sentmessage = "User " + userid + ": " + message;
+        ws.send(sentmessage);
+        messaging = true;
+    }
+    
+
+</script>
+
+</body>
+</html>
