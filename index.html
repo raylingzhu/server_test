@@ -1,2 +1,10 @@
 <!DOCTYPE HTML>
 <H1>helo</H1>
+<script>
+    const ws = new WebSocket("https://testing-site-8082.herokuapp.com/");
+    ws.addEventListener( "open" ,()=>{
+        console.log("connected");
+    });
+
+
+</script>
