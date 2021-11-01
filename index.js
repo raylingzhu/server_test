@@ -7,6 +7,7 @@ var users = 0;
 recievedchat = ' ';
 let i;
 var usersids =  {};
+console.log("server on");
 
 wss.on("connection", ws =>{
     user_id = users;
