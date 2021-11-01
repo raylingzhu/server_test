@@ -9,7 +9,7 @@ wss.on('connection', ws => {
 
 
 
-    ws.on(close, () => {
+    ws.on('close', () => {
         console.log("a client has disconnected");
     })
 } );
