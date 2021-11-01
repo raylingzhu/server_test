@@ -13,6 +13,7 @@
     messaging = false;
 
     const ws = new WebSocket("ws://testing-site-8082.herokuapp.com");
+    console.log(ws.upgradeReq.connection.remoteAddress);
     ws.addEventListener("open",connection);
     function connection(){
         document.getElementById("header").innerHTML = 'connected =======';
