@@ -8,7 +8,6 @@ recievedchat = ' ';
 let i;
 var usersids =  {};
 console.log("server on");
-console.log(ws.upgradeReq.connection.remoteAddress);
 
 wss.on("connection", ws =>{
     user_id = users;
