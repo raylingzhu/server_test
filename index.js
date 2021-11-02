@@ -18,11 +18,19 @@ wss.on("connection", ws =>{
 
     ws.on("message", data => {
         console.log(`Server recieved: ${data}`);
-        recievedchat = " "+ data +" ";
-        for( i in usersids){
-            let socket = usersids[i];
-            socket.send(recievedchat);
+        recievedchat = ""+ data +"";
+        if (recievedchat[0] == "t"){
+            for( i in usersids){
+                let socket = usersids[i];
+                socket.send(recievedchat);
+            }
         }
+        else if (recievedchat[0] == "i"){
+            //Object.defineProperty(o, new_key,
+            //Object.getOwnPropertyDescriptor(o, old_key));
+            //delete o[old_key];
+        }
+        
     })
     
     ws.on("close", () =>{
